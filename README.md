@@ -1,47 +1,45 @@
-# To-Do List App — Multi-user Edition
+# To-Do List App — Redesigned (v4)
+
+## What changed in this version
+The whole task-creation and task-detail flow now follows the layout you
+shared (week-day strip, full-screen forms instead of pop-ups):
+
+- **Home screen:** search bar, a "Daily Task" progress card, a **week
+  strip** (Mon–Sun with dates, arrows to move between weeks) — tap any
+  day to see that day's tasks. Task cards show a colored priority stripe
+  and a circular checkmark.
+- **Tapping "+"** opens a **full-screen "Create new task" page** — same
+  week strip to pick the day, Name, Description, Start Time / End Time
+  (clock-style pickers), Priority as outlined pills, and a "Get alert
+  for this task" toggle.
+- **Tapping an existing task** opens the same full-screen page, pre-filled,
+  with **"Edit Task"** and **"Delete Task"** buttons at the bottom instead
+  of "Create Task".
+- The **Team tab** (create a team, add members by username, weekly/monthly
+  progress) works exactly as before — assigning a task to a teammate now
+  opens the same full-screen page too.
+
+### One honest note about the "Get alert" toggle
+This toggle is saved with the task (so you can see whether it's on or off
+later), but this version does **not** actually send phone notifications —
+building real push notifications needs extra infrastructure (a notification
+service, and for a real phone app, background permissions) that's a
+separate project on top of this. Right now it's there for visual/data
+completeness, matching the design, but flipping it doesn't trigger an
+alert yet. Let me know if you'd like that wired up next — it's very doable
+as a follow-up.
 
 ## Run it locally
 ```
 pip install fastapi uvicorn pyjwt
 python app.py
 ```
-Then open http://localhost:8000 — you'll see a signup/login screen. Each
-person creates their own account; every account only sees its own tasks.
 
-Data is stored in `tasks.db` (SQLite), created automatically next to
-`app.py` the first time you run it.
+## Deploying updates to Render
+Upload the updated `app.py` and `index.html` to your GitHub repo
+("Add file → Upload files" → Commit). Render auto-redeploys.
 
-## Let people on your phone / other devices use it (same Wi-Fi)
-1. On the computer running the server, find its local IP address
-   (Windows: `ipconfig`, look for "IPv4 Address", e.g. `192.168.1.14`).
-2. On your phone (same Wi-Fi network), open a browser and go to:
-   `http://192.168.1.14:8000`
-3. Each person can sign up with their own username/password from their
-   own phone, as long as they're on the same network and your computer
-   stays on and running the server.
-
-This works for testing with people nearby, but it stops working the
-moment your computer is off, asleep, or off that Wi-Fi network.
-
-## Making it available to anyone, anywhere (real deployment)
-For a link that works for anyone on the internet, all the time, you need
-to host the backend on a server that's always on — your own laptop isn't
-enough for that. Common free/low-cost options:
-- **Render** (render.com) — free tier, deploys a FastAPI app directly
-  from a GitHub repo.
-- **Railway** (railway.app) — similar, simple GitHub-based deploys.
-- **PythonAnywhere** — good for small Python apps.
-
-General steps for any of these:
-1. Push this project (`app.py`, `index.html`) to a GitHub repository.
-2. Connect that repo to Render/Railway and point it at `app.py`.
-3. Set the `SECRET_KEY` in `app.py` as an environment variable instead
-   of a hardcoded string (important for real security).
-4. The host gives you a public URL (e.g. `https://your-todo.onrender.com`)
-   — share that link with anyone, and it'll work on any phone or computer,
-   any time.
-
-Note: SQLite works fine for a small number of users, but if this ever
-needs to support many people at once, moving to a hosted database like
-Supabase or Postgres is a natural next step — the backend code would
-only need the `get_db()` function changed, everything else stays the same.
+⚠️ Database structure changed again (new `alert` column) — same note as
+before: on Render's free tier this doesn't matter since data resets on
+redeploy anyway; locally, delete your old `tasks.db` before running this
+version.

@@ -18,253 +18,250 @@
     --pink: #ec4899;
     --gradient: linear-gradient(135deg, var(--purple), var(--pink));
     --red: #e05a5a;
+    --high: #ec4899;
+    --medium: #f4a259;
+    --low: #4cd28a;
   }
   *{box-sizing:border-box;}
   body{
-    margin:0;
-    min-height:100vh;
+    margin:0; min-height:100vh;
     background:
       radial-gradient(circle at 80% -10%, rgba(168,85,247,0.18) 0%, transparent 40%),
       radial-gradient(circle at 0% 30%, rgba(236,72,153,0.10) 0%, transparent 35%),
       var(--bg);
     font-family:'Inter', sans-serif;
     color:var(--text);
-    display:flex;
-    justify-content:center;
+    display:flex; justify-content:center;
     padding:36px 18px 120px;
   }
   h1,h2,h3{font-family:'Poppins', sans-serif; margin:0;}
   .hidden{display:none !important;}
+  button{font-family:'Inter', sans-serif;}
 
   /* ---------- Auth screen ---------- */
-  .auth-wrap{
-    width:100%;
-    max-width:380px;
-    margin:auto;
-  }
+  .auth-wrap{width:100%; max-width:380px; margin:auto;}
   .auth-logo{
-    width:56px; height:56px;
-    border-radius:16px;
-    background:var(--gradient);
-    display:flex; align-items:center; justify-content:center;
-    font-size:26px;
-    margin:0 auto 18px;
+    width:56px; height:56px; border-radius:16px; background:var(--gradient);
+    display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 18px;
   }
-  .auth-wrap h1{
-    font-size:24px;
-    text-align:center;
-    margin-bottom:6px;
-  }
-  .auth-sub{
-    text-align:center;
-    color:var(--text-dim);
-    font-size:13.5px;
-    margin-bottom:26px;
-  }
-  .field-label{
-    font-size:12.5px;
-    color:var(--text-dim);
-    margin-bottom:6px;
-    display:block;
-  }
+  .auth-wrap h1{font-size:24px; text-align:center; margin-bottom:6px;}
+  .auth-sub{text-align:center; color:var(--text-dim); font-size:13.5px; margin-bottom:22px;}
+  .field-label{font-size:12.5px; color:var(--text-dim); margin-bottom:6px; display:block;}
   .auth-wrap input{
-    width:100%;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:14px 16px;
-    color:var(--text);
-    font-family:'Inter', sans-serif;
-    font-size:14px;
-    outline:none;
-    margin-bottom:16px;
-    transition:border-color .15s ease;
+    width:100%; background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:14px 16px; color:var(--text); font-size:14px; outline:none; margin-bottom:16px;
   }
   .auth-wrap input:focus{border-color:var(--purple);}
-  .auth-error{
-    color:var(--red);
-    font-size:12.5px;
-    margin:-8px 0 14px;
-    min-height:16px;
-  }
-  .btn{
-    width:100%;
-    border:none;
-    border-radius:14px;
-    padding:14px;
-    font-family:'Inter', sans-serif;
-    font-weight:600;
-    font-size:14px;
-    cursor:pointer;
-  }
+  .auth-error{color:var(--red); font-size:12.5px; margin:-8px 0 14px; min-height:16px;}
+  .btn{width:100%; border:none; border-radius:14px; padding:14px; font-weight:600; font-size:14px; cursor:pointer;}
   .btn-primary{background:var(--gradient); color:#fff;}
   .btn-secondary{background:var(--card-2); color:var(--text-dim); border:1px solid var(--border);}
-  .auth-switch{
-    text-align:center;
-    font-size:13px;
-    color:var(--text-dim);
-    margin-top:18px;
-  }
+  .btn-danger{background:rgba(224,90,90,0.12); color:var(--red); border:1px solid rgba(224,90,90,0.3);}
+  .auth-switch{text-align:center; font-size:13px; color:var(--text-dim); margin-top:18px;}
   .auth-switch a{color:var(--purple); text-decoration:none; font-weight:600; cursor:pointer;}
 
-  /* ---------- App screen ---------- */
-  .app{
-    width:100%;
-    max-width:480px;
-  }
-  .header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    margin-bottom:22px;
-  }
-  .header h1{
-    font-size:22px;
-    font-weight:600;
-    line-height:1.3;
-  }
-  .header .accent{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-  }
-  .header-right{display:flex; align-items:center; gap:10px;}
+  /* ---------- Shared chrome ---------- */
+  .app{width:100%; max-width:480px;}
+  .header{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;}
+  .header h1{font-size:20px; font-weight:600; line-height:1.35;}
+  .header .accent{background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .avatar{
-    width:44px; height:44px;
-    border-radius:50%;
-    background:var(--gradient);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:600; font-size:16px;
-    flex-shrink:0;
-    text-transform:uppercase;
+    width:44px; height:44px; border-radius:50%; background:var(--gradient);
+    display:flex; align-items:center; justify-content:center; font-weight:600; font-size:16px;
+    flex-shrink:0; text-transform:uppercase;
   }
   .logout-btn{
-    background:none;
-    border:1px solid var(--border);
-    color:var(--text-dim);
-    border-radius:10px;
-    padding:6px 10px;
-    font-size:11.5px;
-    cursor:pointer;
+    background:none; border:1px solid var(--border); color:var(--text-dim);
+    border-radius:10px; padding:6px 10px; font-size:11.5px; cursor:pointer;
   }
   .logout-btn:hover{border-color:var(--red); color:var(--red);}
+  .top-nav{display:flex; gap:8px; margin-bottom:20px;}
+  .top-nav-btn{
+    flex:1; text-align:center; padding:11px; border-radius:12px; border:1px solid var(--border);
+    background:var(--card); color:var(--text-dim); font-size:13px; font-weight:600; cursor:pointer;
+  }
+  .top-nav-btn.active{background:var(--gradient); color:#fff; border-color:transparent;}
 
-  .search-wrap{position:relative; margin-bottom:22px;}
+  .search-wrap{position:relative; margin-bottom:20px;}
   .search-wrap svg{position:absolute; left:16px; top:50%; transform:translateY(-50%); opacity:0.5;}
   .search-wrap input{
-    width:100%;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:14px 16px 14px 46px;
-    color:var(--text);
-    font-family:'Inter', sans-serif;
-    font-size:14px;
-    outline:none;
+    width:100%; background:var(--card); border:1px solid var(--border); border-radius:16px;
+    padding:14px 16px 14px 46px; color:var(--text); font-size:14px; outline:none;
   }
   .search-wrap input:focus{border-color:var(--purple);}
   .search-wrap input::placeholder{color:var(--text-dim);}
 
-  .progress-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:20px;
-    margin-bottom:26px;
-  }
+  .section-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+  .section-head h3{font-size:16px; font-weight:600;}
+
+  .progress-card{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:20px; margin-bottom:24px;}
   .progress-card .top-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;}
   .progress-card .top-row h3{font-size:15px; font-weight:600;}
   .progress-card .top-row .pct{
-    font-size:15px; font-weight:700;
-    background:var(--gradient);
+    font-size:15px; font-weight:700; background:var(--gradient);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .progress-card .sub{font-size:12.5px; color:var(--text-dim); margin-bottom:14px;}
   .bar-track{width:100%; height:9px; background:var(--card-2); border-radius:6px; overflow:hidden;}
   .bar-fill{height:100%; background:var(--gradient); border-radius:6px; transition:width .35s ease; width:0%;}
 
-  .section-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
-  .section-head h3{font-size:16px; font-weight:600;}
-  .clear-link{background:none; border:none; color:var(--pink); font-size:12.5px; font-weight:500; cursor:pointer; padding:0;}
-  .clear-link:hover{text-decoration:underline;}
+  /* ---------- Week day-strip ---------- */
+  .week-strip{margin-bottom:22px;}
+  .week-nav{display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:14px;}
+  .week-nav button{
+    background:none; border:none; color:var(--purple); cursor:pointer; font-size:18px;
+    display:flex; align-items:center; justify-content:center; padding:4px;
+  }
+  .week-nav .label{font-size:13px; font-weight:600; color:var(--purple);}
+  .week-days{display:flex; justify-content:space-between; gap:4px;}
+  .day-cell{
+    flex:1; text-align:center; padding:9px 2px; border-radius:12px; border:1.5px solid transparent;
+    cursor:pointer; position:relative;
+  }
+  .day-cell .dname{font-size:10.5px; color:var(--text-dim); margin-bottom:5px; text-transform:uppercase;}
+  .day-cell .dnum{font-size:13.5px; font-weight:600;}
+  .day-cell.selected{border-color:var(--purple); background:rgba(168,85,247,0.08);}
+  .day-cell.selected .dnum{color:var(--purple);}
+  .day-cell .dot{width:4px; height:4px; border-radius:50%; background:var(--purple); margin:5px auto 0; opacity:0;}
+  .day-cell.selected .dot{opacity:1;}
 
+  /* ---------- Task list ---------- */
   .task-list{display:flex; flex-direction:column; gap:12px; margin-bottom:8px;}
   .task-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-left:4px solid var(--accent, var(--purple));
-    border-radius:14px;
-    padding:16px 14px;
-    display:flex; align-items:center; gap:12px;
-    animation:fadeIn .25s ease;
+    background:var(--card); border:1px solid var(--border); border-left:4px solid var(--accent, var(--purple));
+    border-radius:14px; padding:16px 14px; display:flex; align-items:center; gap:12px; cursor:pointer;
   }
   .task-info{flex:1; min-width:0;}
-  .task-info .title{font-size:14.5px; font-weight:500; margin-bottom:4px; word-break:break-word;}
+  .task-info .title{font-size:14.5px; font-weight:500; margin-bottom:5px; word-break:break-word;}
   .task-info .title.done{color:var(--text-dim); text-decoration:line-through;}
-  .task-meta{font-size:12px; color:var(--text-dim);}
+  .task-meta{display:flex; align-items:center; gap:8px; font-size:11.5px; color:var(--text-dim); flex-wrap:wrap;}
+  .priority-chip{font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:20px; text-transform:uppercase; letter-spacing:.3px;}
+  .priority-chip.high{background:rgba(236,72,153,.15); color:var(--high);}
+  .priority-chip.medium{background:rgba(244,162,89,.15); color:var(--medium);}
+  .priority-chip.low{background:rgba(76,210,138,.15); color:var(--low);}
+  .assigned-chip{font-size:10.5px; font-weight:600; padding:2px 8px; border-radius:20px; background:rgba(168,85,247,.15); color:var(--purple);}
   .check-btn{
-    width:30px; height:30px; border-radius:50%;
-    border:2px solid var(--border);
-    background:transparent;
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer; flex-shrink:0;
-    transition:all .15s ease;
+    width:30px; height:30px; border-radius:50%; border:2px solid var(--border); background:transparent;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;
   }
   .check-btn:hover{border-color:var(--purple);}
   .check-btn.done{background:var(--gradient); border-color:transparent;}
   .check-btn svg{display:none; width:14px; height:14px;}
   .check-btn.done svg{display:block;}
-  .del-btn{background:none; border:none; color:var(--text-dim); cursor:pointer; padding:4px; display:flex; flex-shrink:0; transition:color .15s ease;}
-  .del-btn:hover{color:var(--pink);}
 
   .empty-state{
-    text-align:center; padding:50px 16px; color:var(--text-dim);
+    text-align:center; padding:44px 16px; color:var(--text-dim);
     background:var(--card); border:1px dashed var(--border); border-radius:16px; font-size:13.5px;
   }
   .empty-state .big{font-size:32px; margin-bottom:10px;}
+  .clear-link{background:none; border:none; color:var(--pink); font-size:12.5px; font-weight:500; cursor:pointer; padding:0;}
+  .clear-link:hover{text-decoration:underline;}
 
+  /* ---------- Team tab ---------- */
+  .team-card{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:22px; margin-bottom:18px;}
+  .team-card h3{font-size:16px; margin-bottom:6px;}
+  .team-card .desc{font-size:13px; color:var(--text-dim); margin-bottom:16px; line-height:1.5;}
+  .inline-form{display:flex; gap:8px;}
+  .inline-form input{
+    flex:1; background:var(--card-2); border:1px solid var(--border); border-radius:12px;
+    padding:12px 14px; color:var(--text); font-size:13.5px; outline:none;
+  }
+  .inline-form input:focus{border-color:var(--purple);}
+  .inline-form button{
+    background:var(--gradient); color:#fff; border:none; border-radius:12px;
+    padding:0 18px; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;
+  }
+  .team-error{color:var(--red); font-size:12.5px; margin-top:8px;}
+  .team-success{color:var(--low); font-size:12.5px; margin-top:8px;}
+  .you-badge{
+    display:inline-block; background:var(--card-2); border:1px solid var(--border); color:var(--purple);
+    font-size:11.5px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:14px;
+  }
+  .emp-card{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; margin-bottom:14px;}
+  .emp-card .row1{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;}
+  .emp-card .emp-name{font-size:15px; font-weight:600; display:flex; align-items:center; gap:10px;}
+  .emp-card .emp-pending{font-size:11.5px; color:var(--text-dim);}
+  .emp-stats{display:flex; gap:18px; margin-bottom:14px;}
+  .emp-stat{flex:1;}
+  .emp-stat .label{font-size:11px; color:var(--text-dim); margin-bottom:4px;}
+  .emp-stat .value{font-size:18px; font-weight:700;}
+  .assign-to-btn{
+    width:100%; background:var(--card-2); border:1px solid var(--border); color:var(--text);
+    border-radius:12px; padding:10px; font-size:12.5px; font-weight:600; cursor:pointer;
+  }
+  .assign-to-btn:hover{border-color:var(--purple); color:var(--purple);}
+
+  /* ---------- FAB ---------- */
   .fab{
     position:fixed; bottom:32px; right:50%; transform:translateX(224px);
-    width:58px; height:58px; border-radius:50%;
-    background:var(--gradient); border:none; color:#fff; font-size:28px;
-    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    width:58px; height:58px; border-radius:50%; background:var(--gradient); border:none; color:#fff;
+    font-size:28px; display:flex; align-items:center; justify-content:center; cursor:pointer;
     box-shadow:0 10px 30px rgba(168,85,247,0.45);
-    transition:transform .15s ease;
   }
-  .fab:hover{transform:translateX(224px) scale(1.06);}
-  .fab:active{transform:translateX(224px) scale(0.96);}
+  @media (max-width:560px){ .fab{right:24px; transform:none;} }
 
-  .overlay{
-    position:fixed; inset:0; background:rgba(0,0,0,0.55); backdrop-filter:blur(3px);
-    display:none; align-items:flex-end; justify-content:center; z-index:50;
+  /* ---------- Full-screen task form (create / edit) ---------- */
+  .task-page{
+    position:fixed; inset:0; background:var(--bg); z-index:60; overflow-y:auto;
+    display:none; padding:36px 18px 60px; justify-content:center;
   }
-  .overlay.open{display:flex;}
-  .modal{
-    background:var(--card); border:1px solid var(--border);
-    border-radius:24px 24px 0 0; width:100%; max-width:480px;
-    padding:26px 22px 30px; animation:slideUp .25s ease;
+  .task-page.open{display:flex;}
+  .task-page-inner{width:100%; max-width:480px;}
+  .page-head{display:flex; align-items:center; gap:16px; margin-bottom:26px;}
+  .back-btn{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--card);
+    color:var(--text); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;
   }
-  .modal h3{font-size:18px; margin-bottom:18px;}
-  .modal input[type="text"]{
-    width:100%; background:var(--card-2); border:1px solid var(--border);
-    border-radius:14px; padding:14px 16px; color:var(--text);
-    font-family:'Inter', sans-serif; font-size:14px; outline:none; margin-bottom:18px;
-  }
-  .modal input[type="text"]:focus{border-color:var(--purple);}
-  .modal-actions{display:flex; gap:10px;}
-  .modal-actions .btn{flex:1;}
+  .page-head h2{font-size:19px; font-weight:600;}
 
-  @keyframes fadeIn{from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:translateY(0);}}
-  @keyframes slideUp{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
+  .tp-label{font-size:14px; font-weight:600; margin:22px 0 12px;}
+  .tp-label:first-of-type{margin-top:0;}
+  .task-page input[type="text"], .task-page textarea, .task-page input[type="time"]{
+    width:100%; background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:14px 16px; color:var(--text); font-family:'Inter', sans-serif; font-size:14px;
+    outline:none; margin-bottom:14px;
+  }
+  .task-page input:focus, .task-page textarea:focus{border-color:var(--purple);}
+  .task-page textarea{resize:vertical; min-height:80px;}
 
-  @media (prefers-reduced-motion: reduce){
-    .task-card, .modal, .fab{animation:none !important; transition:none !important;}
+  .time-row{display:flex; gap:12px;}
+  .time-field{flex:1;}
+  .time-field .field-label{margin-bottom:8px;}
+  .time-input-wrap{position:relative;}
+  .time-input-wrap svg{position:absolute; left:14px; top:50%; transform:translateY(-50%); opacity:0.6; pointer-events:none;}
+  .time-input-wrap input{padding-left:40px;}
+
+  .priority-row{display:flex; gap:10px; margin-bottom:8px;}
+  .priority-opt{
+    flex:1; text-align:center; padding:12px; border-radius:14px; border:1.5px solid var(--border);
+    background:transparent; color:var(--text-dim); font-size:13px; font-weight:600; cursor:pointer;
   }
-  @media (max-width:520px){
-    .fab{right:24px; transform:none;}
-    .fab:hover, .fab:active{transform:scale(1.06);}
+  .priority-opt.active.high{border-color:var(--high); color:var(--high);}
+  .priority-opt.active.medium{border-color:var(--medium); color:var(--medium);}
+  .priority-opt.active.low{border-color:var(--low); color:var(--low);}
+
+  .alert-row{
+    display:flex; justify-content:space-between; align-items:center;
+    margin:22px 0 30px; font-size:14px; font-weight:500;
   }
+  .switch{position:relative; width:46px; height:26px; flex-shrink:0;}
+  .switch input{opacity:0; width:0; height:0;}
+  .slider{
+    position:absolute; inset:0; background:var(--card-2); border:1px solid var(--border);
+    border-radius:20px; cursor:pointer; transition:.2s;
+  }
+  .slider::before{
+    content:""; position:absolute; width:18px; height:18px; left:3px; top:3px;
+    background:var(--text-dim); border-radius:50%; transition:.2s;
+  }
+  .switch input:checked + .slider{background:var(--gradient); border-color:transparent;}
+  .switch input:checked + .slider::before{transform:translateX(20px); background:#fff;}
+
+  .tp-actions{display:flex; gap:10px;}
+  .tp-actions .btn{flex:1;}
+  .tp-error{color:var(--red); font-size:12.5px; margin-bottom:12px; min-height:16px;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
 </style>
 </head>
 <body>
@@ -277,12 +274,10 @@
 
   <label class="field-label">Username</label>
   <input type="text" id="authUsername" autocomplete="username" placeholder="e.g. dhanshri">
-
   <label class="field-label">Password</label>
   <input type="password" id="authPassword" autocomplete="current-password" placeholder="••••••••">
 
   <div class="auth-error" id="authError"></div>
-
   <button class="btn btn-primary" id="authSubmitBtn">Log in</button>
 
   <div class="auth-switch">
@@ -291,60 +286,152 @@
   </div>
 </div>
 
-<!-- ===== Main app screen ===== -->
-<div class="app hidden" id="appScreen">
+<!-- ===== Main app ===== -->
+<div class="app hidden" id="mainApp">
   <div class="header">
-    <h1>You have got <span class="accent" id="taskCount">0</span> tasks<br>to stay on top of</h1>
-    <div class="header-right">
-      <div class="avatar" id="avatarInitial">?</div>
+    <h1>You have got <span class="accent" id="taskCount">0</span> tasks<br>to complete</h1>
+    <div class="avatar" id="avatarInitial">?</div>
+  </div>
+  <div style="margin-bottom:18px;"><button class="logout-btn" id="logoutBtn">Log out</button></div>
+
+  <div class="top-nav">
+    <div class="top-nav-btn active" data-view="tasks">My Tasks</div>
+    <div class="top-nav-btn" data-view="team">Team</div>
+  </div>
+
+  <div id="tasksView">
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchBox" placeholder="Search Task Here">
     </div>
-  </div>
-  <button class="logout-btn" id="logoutBtn" style="margin-bottom:18px;">Log out</button>
 
-  <div class="search-wrap">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    <input type="text" id="searchBox" placeholder="Search your tasks">
-  </div>
-
-  <div class="progress-card">
-    <div class="top-row">
-      <h3>Daily Progress</h3>
-      <span class="pct" id="pctLabel">0%</span>
+    <div class="section-head"><h3>Progress</h3></div>
+    <div class="progress-card">
+      <div class="top-row"><h3>Daily Task</h3><span class="pct" id="pctLabel">0%</span></div>
+      <div class="sub" id="progressSub">Add a task to get started</div>
+      <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
     </div>
-    <div class="sub" id="progressSub">Add a task to get started</div>
-    <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+
+    <div class="week-strip" id="weekStrip">
+      <div class="week-nav">
+        <button id="weekPrev">&#8249;</button>
+        <span class="label" id="weekLabel">—</span>
+        <button id="weekNext">&#8250;</button>
+      </div>
+      <div class="week-days" id="weekDays"></div>
+    </div>
+
+    <div class="section-head">
+      <h3 id="dayHeading">Today's Task</h3>
+      <button class="clear-link" id="clearAllBtn">Clear day</button>
+    </div>
+
+    <div class="task-list" id="taskList"></div>
   </div>
 
-  <div class="section-head">
-    <h3>Your Tasks</h3>
-    <button class="clear-link" id="clearAllBtn">Clear all</button>
-  </div>
-
-  <div class="task-list" id="taskList"></div>
+  <div id="teamView" class="hidden"></div>
 </div>
 
-<button class="fab hidden" id="openModalBtn" aria-label="Add task">+</button>
+<button class="fab hidden" id="openCreateBtn" aria-label="Add task">+</button>
 
-<div class="overlay" id="overlay">
-  <div class="modal">
-    <h3>New task</h3>
-    <form id="entryForm">
-      <input type="text" id="taskInput" placeholder="What do you need to do?" autocomplete="off">
-      <div class="modal-actions">
-        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
-        <button type="submit" class="btn btn-primary">Add task</button>
+<!-- ===== Full-screen Create / Edit task page ===== -->
+<div class="task-page" id="taskPage">
+  <div class="task-page-inner">
+    <div class="page-head">
+      <button class="back-btn" id="tpBackBtn">&#8592;</button>
+      <h2 id="tpTitle">Create new task</h2>
+    </div>
+
+    <div class="week-strip">
+      <div class="week-nav">
+        <button id="tpWeekPrev">&#8249;</button>
+        <span class="label" id="tpWeekLabel">—</span>
+        <button id="tpWeekNext">&#8250;</button>
       </div>
-    </form>
+      <div class="week-days" id="tpWeekDays"></div>
+    </div>
+
+    <div class="tp-label">Schedule</div>
+    <input type="text" id="tpName" placeholder="Name">
+    <textarea id="tpDesc" placeholder="Description"></textarea>
+
+    <div class="time-row">
+      <div class="time-field">
+        <label class="field-label">Start Time</label>
+        <div class="time-input-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <input type="time" id="tpStart">
+        </div>
+      </div>
+      <div class="time-field">
+        <label class="field-label">End Time</label>
+        <div class="time-input-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <input type="time" id="tpEnd">
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-label">Priority</div>
+    <div class="priority-row">
+      <div class="priority-opt high" data-priority="High">High</div>
+      <div class="priority-opt medium active" data-priority="Medium">Medium</div>
+      <div class="priority-opt low" data-priority="Low">Low</div>
+    </div>
+
+    <div class="alert-row">
+      <span>Get alert for this task</span>
+      <label class="switch">
+        <input type="checkbox" id="tpAlert">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="tp-error" id="tpError"></div>
+
+    <div class="tp-actions">
+      <button type="button" class="btn btn-danger hidden" id="tpDeleteBtn">Delete Task</button>
+      <button type="button" class="btn btn-primary" id="tpSaveBtn">Create Task</button>
+    </div>
   </div>
 </div>
 
 <script>
 const API = "/api";
-const ACCENTS = ["#a855f7", "#5b8def", "#ec4899", "#f4a259", "#4cd28a"];
+let mode = "login";
+let myUsername = null;
+let allTasks = [];
+let currentPriority = "Medium";
+let assignToId = null;
+let editingTaskId = null; // set when the task page is editing an existing task
+
+// Home week strip state
+let homeWeekStart = startOfWeek(new Date());
+let selectedDate = new Date(); // the day currently shown in the task list
+
+// Task-page week strip state (independent, for choosing the task's day)
+let tpWeekStart = startOfWeek(new Date());
+let tpSelectedDate = new Date();
+
+function startOfWeek(d){
+  const date = new Date(d);
+  const day = (date.getDay() + 6) % 7; // Mon=0 ... Sun=6
+  date.setDate(date.getDate() - day);
+  date.setHours(0,0,0,0);
+  return date;
+}
+function addDays(d, n){ const x = new Date(d); x.setDate(x.getDate()+n); return x; }
+function isoDate(d){ return d.toISOString().slice(0,10); }
+function sameDay(a,b){ return isoDate(a) === isoDate(b); }
+function fmtWeekLabel(start){
+  const end = addDays(start,6);
+  const opts = {day:"2-digit", month:"short"};
+  return `${start.toLocaleDateString(undefined,opts)} - ${end.toLocaleDateString(undefined,opts)}`;
+}
 
 // ---------- Elements ----------
 const authScreen = document.getElementById("authScreen");
-const appScreen = document.getElementById("appScreen");
+const mainApp = document.getElementById("mainApp");
 const authTitle = document.getElementById("authTitle");
 const authSub = document.getElementById("authSub");
 const authUsername = document.getElementById("authUsername");
@@ -353,40 +440,53 @@ const authError = document.getElementById("authError");
 const authSubmitBtn = document.getElementById("authSubmitBtn");
 const authSwitchText = document.getElementById("authSwitchText");
 const authSwitchLink = document.getElementById("authSwitchLink");
-const logoutBtn = document.getElementById("logoutBtn");
-const avatarInitial = document.getElementById("avatarInitial");
 
-const taskList = document.getElementById("taskList");
 const taskCount = document.getElementById("taskCount");
+const avatarInitial = document.getElementById("avatarInitial");
+const logoutBtn = document.getElementById("logoutBtn");
+const tasksView = document.getElementById("tasksView");
+const teamView = document.getElementById("teamView");
+const taskList = document.getElementById("taskList");
 const pctLabel = document.getElementById("pctLabel");
 const progressSub = document.getElementById("progressSub");
 const barFill = document.getElementById("barFill");
-const overlay = document.getElementById("overlay");
-const openModalBtn = document.getElementById("openModalBtn");
-const cancelBtn = document.getElementById("cancelBtn");
-const entryForm = document.getElementById("entryForm");
-const taskInput = document.getElementById("taskInput");
 const searchBox = document.getElementById("searchBox");
 const clearAllBtn = document.getElementById("clearAllBtn");
+const dayHeading = document.getElementById("dayHeading");
 
-let mode = "login"; // or "signup"
-let allTasks = [];
+const weekLabel = document.getElementById("weekLabel");
+const weekDays = document.getElementById("weekDays");
+const weekPrev = document.getElementById("weekPrev");
+const weekNext = document.getElementById("weekNext");
 
-// ---------- Auth mode switching ----------
+const openCreateBtn = document.getElementById("openCreateBtn");
+const taskPage = document.getElementById("taskPage");
+const tpBackBtn = document.getElementById("tpBackBtn");
+const tpTitle = document.getElementById("tpTitle");
+const tpName = document.getElementById("tpName");
+const tpDesc = document.getElementById("tpDesc");
+const tpStart = document.getElementById("tpStart");
+const tpEnd = document.getElementById("tpEnd");
+const tpAlert = document.getElementById("tpAlert");
+const tpError = document.getElementById("tpError");
+const tpSaveBtn = document.getElementById("tpSaveBtn");
+const tpDeleteBtn = document.getElementById("tpDeleteBtn");
+const tpWeekLabel = document.getElementById("tpWeekLabel");
+const tpWeekDays = document.getElementById("tpWeekDays");
+const tpWeekPrev = document.getElementById("tpWeekPrev");
+const tpWeekNext = document.getElementById("tpWeekNext");
+
+// ---------- Auth ----------
 authSwitchLink.addEventListener("click", () => {
   mode = mode === "login" ? "signup" : "login";
   authError.textContent = "";
   if(mode === "signup"){
-    authTitle.textContent = "Create account";
-    authSub.textContent = "Sign up to start tracking tasks";
-    authSubmitBtn.textContent = "Sign up";
-    authSwitchText.textContent = "Already have an account?";
+    authTitle.textContent = "Create account"; authSub.textContent = "Sign up to start tracking tasks";
+    authSubmitBtn.textContent = "Sign up"; authSwitchText.textContent = "Already have an account?";
     authSwitchLink.textContent = "Log in";
   } else {
-    authTitle.textContent = "Welcome back";
-    authSub.textContent = "Log in to see your tasks";
-    authSubmitBtn.textContent = "Log in";
-    authSwitchText.textContent = "Don't have an account?";
+    authTitle.textContent = "Welcome back"; authSub.textContent = "Log in to see your tasks";
+    authSubmitBtn.textContent = "Log in"; authSwitchText.textContent = "Don't have an account?";
     authSwitchLink.textContent = "Sign up";
   }
 });
@@ -395,76 +495,120 @@ authSubmitBtn.addEventListener("click", async () => {
   const username = authUsername.value.trim();
   const password = authPassword.value;
   authError.textContent = "";
-  if(!username || !password){
-    authError.textContent = "Please fill in both fields.";
-    return;
-  }
+  if(!username || !password){ authError.textContent = "Please fill in both fields."; return; }
   const endpoint = mode === "login" ? "/auth/login" : "/auth/signup";
   try{
     const res = await fetch(API + endpoint, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({username, password})
+      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username, password})
     });
     const data = await res.json();
-    if(!res.ok){
-      authError.textContent = data.detail || "Something went wrong.";
-      return;
-    }
+    if(!res.ok){ authError.textContent = data.detail || "Something went wrong."; return; }
     localStorage.setItem("todo_token", data.token);
     localStorage.setItem("todo_username", data.username);
     enterApp(data.username);
-  } catch(err){
-    authError.textContent = "Could not reach the server.";
-  }
+  } catch(err){ authError.textContent = "Could not reach the server."; }
 });
 
 logoutBtn.addEventListener("click", () => {
-  localStorage.removeItem("todo_token");
-  localStorage.removeItem("todo_username");
-  appScreen.classList.add("hidden");
-  openModalBtn.classList.add("hidden");
+  localStorage.removeItem("todo_token"); localStorage.removeItem("todo_username");
+  mainApp.classList.add("hidden"); openCreateBtn.classList.add("hidden");
   authScreen.classList.remove("hidden");
-  authUsername.value = "";
-  authPassword.value = "";
+  authUsername.value = ""; authPassword.value = "";
 });
 
-function authHeaders(){
-  return {"Authorization": "Bearer " + localStorage.getItem("todo_token")};
-}
-
-function enterApp(username){
-  authScreen.classList.add("hidden");
-  appScreen.classList.remove("hidden");
-  openModalBtn.classList.remove("hidden");
-  avatarInitial.textContent = username.charAt(0);
-  fetchTasks();
-}
-
-// Auto login if a token is already stored
-(function tryAutoLogin(){
-  const token = localStorage.getItem("todo_token");
-  const username = localStorage.getItem("todo_username");
-  if(token && username){
-    enterApp(username);
-  }
-})();
-
-// ---------- Task logic ----------
+function authHeaders(){ return {"Authorization": "Bearer " + localStorage.getItem("todo_token")}; }
 async function apiFetch(path, options = {}){
-  const res = await fetch(API + path, {
-    ...options,
-    headers: {...(options.headers || {}), ...authHeaders()}
-  });
-  if(res.status === 401){
-    logoutBtn.click();
-    throw new Error("Session expired");
-  }
+  const res = await fetch(API + path, {...options, headers: {...(options.headers || {}), ...authHeaders()}});
+  if(res.status === 401){ logoutBtn.click(); throw new Error("Session expired"); }
   return res;
 }
 
+function enterApp(username){
+  myUsername = username;
+  authScreen.classList.add("hidden");
+  mainApp.classList.remove("hidden");
+  openCreateBtn.classList.remove("hidden");
+  avatarInitial.textContent = username.charAt(0);
+  renderWeekStrip(weekDays, weekLabel, homeWeekStart, selectedDate, selectHomeDay);
+  fetchTasks();
+}
+
+(function tryAutoLogin(){
+  const token = localStorage.getItem("todo_token");
+  const username = localStorage.getItem("todo_username");
+  if(token && username) enterApp(username);
+})();
+
+// ---------- Top nav ----------
+document.querySelectorAll(".top-nav-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".top-nav-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    if(btn.dataset.view === "tasks"){
+      tasksView.classList.remove("hidden"); teamView.classList.add("hidden");
+      openCreateBtn.classList.remove("hidden");
+    } else {
+      tasksView.classList.add("hidden"); teamView.classList.remove("hidden");
+      openCreateBtn.classList.add("hidden");
+      loadTeamView();
+    }
+  });
+});
+
+// ---------- Week strip (shared renderer) ----------
+function renderWeekStrip(container, labelEl, weekStart, selected, onSelect){
+  labelEl.textContent = fmtWeekLabel(weekStart);
+  container.innerHTML = "";
+  const dayNames = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  for(let i=0;i<7;i++){
+    const d = addDays(weekStart, i);
+    const cell = document.createElement("div");
+    cell.className = "day-cell" + (sameDay(d, selected) ? " selected" : "");
+    cell.innerHTML = `<div class="dname">${dayNames[i]}</div><div class="dnum">${String(d.getDate()).padStart(2,"0")}</div><div class="dot"></div>`;
+    cell.addEventListener("click", () => onSelect(d));
+    container.appendChild(cell);
+  }
+}
+
+weekPrev.addEventListener("click", () => {
+  homeWeekStart = addDays(homeWeekStart, -7);
+  renderWeekStrip(weekDays, weekLabel, homeWeekStart, selectedDate, selectHomeDay);
+});
+weekNext.addEventListener("click", () => {
+  homeWeekStart = addDays(homeWeekStart, 7);
+  renderWeekStrip(weekDays, weekLabel, homeWeekStart, selectedDate, selectHomeDay);
+});
+function selectHomeDay(d){
+  selectedDate = d;
+  renderWeekStrip(weekDays, weekLabel, homeWeekStart, selectedDate, selectHomeDay);
+  fetchTasks();
+}
+
+tpWeekPrev.addEventListener("click", () => {
+  tpWeekStart = addDays(tpWeekStart, -7);
+  renderWeekStrip(tpWeekDays, tpWeekLabel, tpWeekStart, tpSelectedDate, selectTpDay);
+});
+tpWeekNext.addEventListener("click", () => {
+  tpWeekStart = addDays(tpWeekStart, 7);
+  renderWeekStrip(tpWeekDays, tpWeekLabel, tpWeekStart, tpSelectedDate, selectTpDay);
+});
+function selectTpDay(d){
+  tpSelectedDate = d;
+  renderWeekStrip(tpWeekDays, tpWeekLabel, tpWeekStart, tpSelectedDate, selectTpDay);
+}
+
+// ---------- Task list ----------
+function dayHeadingLabel(d){
+  const today = new Date();
+  if(sameDay(d, today)) return "Today's Task";
+  if(sameDay(d, addDays(today,-1))) return "Yesterday's Task";
+  if(sameDay(d, addDays(today,1))) return "Tomorrow's Task";
+  return d.toLocaleDateString(undefined, {weekday:"long", month:"short", day:"numeric"});
+}
+
 async function fetchTasks(){
-  const res = await apiFetch("/tasks");
+  dayHeading.textContent = dayHeadingLabel(selectedDate);
+  const res = await apiFetch(`/tasks?date=${isoDate(selectedDate)}`);
   allTasks = await res.json();
   render(allTasks);
   updateProgress();
@@ -477,93 +621,253 @@ async function updateProgress(){
   const pct = stats.total ? Math.round((stats.completed / stats.total) * 100) : 0;
   pctLabel.textContent = pct + "%";
   barFill.style.width = pct + "%";
-  progressSub.textContent = stats.total
-    ? `${stats.completed} of ${stats.total} tasks completed`
-    : "Add a task to get started";
+  progressSub.textContent = stats.total ? `${stats.completed} of ${stats.total} tasks completed` : "Add a task to get started";
 }
+
+function escapeHtml(str){ const div = document.createElement("div"); div.textContent = str; return div.innerHTML; }
 
 function render(list){
   taskList.innerHTML = "";
   if(list.length === 0){
-    taskList.innerHTML = `
-      <div class="empty-state">
-        <div class="big">🌤️</div>
-        Nothing here yet. Tap the + button to add your first task.
-      </div>`;
+    taskList.innerHTML = `<div class="empty-state"><div class="big">🌤️</div>Nothing scheduled for this day. Tap + to add a task.</div>`;
     return;
   }
-  list.forEach((t, i) => {
+  list.forEach(t => {
     const card = document.createElement("div");
     card.className = "task-card";
-    card.style.setProperty("--accent", ACCENTS[i % ACCENTS.length]);
+    const accentMap = {High:"var(--high)", Medium:"var(--medium)", Low:"var(--low)"};
+    card.style.setProperty("--accent", accentMap[t.priority] || "var(--purple)");
+    const timeStr = t.start_datetime ? new Date(t.start_datetime).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"}) : "";
     card.innerHTML = `
       <div class="task-info">
         <div class="title ${t.completed ? "done" : ""}">${escapeHtml(t.text)}</div>
-        <div class="task-meta">${t.completed ? "Completed" : "In progress"}</div>
+        <div class="task-meta">
+          <span class="priority-chip ${t.priority.toLowerCase()}">${t.priority}</span>
+          ${t.assigned_by ? '<span class="assigned-chip">Assigned</span>' : ''}
+          ${timeStr ? `<span>${timeStr}</span>` : ''}
+        </div>
       </div>
       <button class="check-btn ${t.completed ? "done" : ""}" data-id="${t.id}" aria-label="Toggle complete">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </button>
-      <button class="del-btn" data-id="${t.id}" aria-label="Delete task">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
-      </button>
     `;
+    card.querySelector(".task-info").addEventListener("click", () => openTaskPage("edit", t));
+    card.querySelector(".check-btn").addEventListener("click", async (e) => {
+      e.stopPropagation();
+      await apiFetch(`/tasks/${t.id}/toggle`, {method:"PATCH"});
+      fetchTasks();
+    });
     taskList.appendChild(card);
   });
 }
 
-function escapeHtml(str){
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-function openModal(){
-  overlay.classList.add("open");
-  taskInput.value = "";
-  setTimeout(() => taskInput.focus(), 50);
-}
-function closeModal(){ overlay.classList.remove("open"); }
-
-openModalBtn.addEventListener("click", openModal);
-cancelBtn.addEventListener("click", closeModal);
-overlay.addEventListener("click", (e) => { if(e.target === overlay) closeModal(); });
-
-entryForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const text = taskInput.value.trim();
-  if(!text) return;
-  await apiFetch("/tasks", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({text})
-  });
-  closeModal();
-  fetchTasks();
-});
-
-taskList.addEventListener("click", async (e) => {
-  const check = e.target.closest(".check-btn");
-  const del = e.target.closest(".del-btn");
-  if(check){
-    await apiFetch(`/tasks/${check.dataset.id}/toggle`, {method:"PATCH"});
-    fetchTasks();
-  } else if(del){
-    await apiFetch(`/tasks/${del.dataset.id}`, {method:"DELETE"});
-    fetchTasks();
-  }
-});
-
 clearAllBtn.addEventListener("click", async () => {
   if(allTasks.length === 0) return;
-  if(!confirm("Clear every task? This cannot be undone.")) return;
-  await apiFetch("/tasks", {method:"DELETE"});
+  if(!confirm("Delete all tasks shown for this day?")) return;
+  for(const t of allTasks){ await apiFetch(`/tasks/${t.id}`, {method:"DELETE"}); }
   fetchTasks();
 });
 
 searchBox.addEventListener("input", () => {
   const q = searchBox.value.trim().toLowerCase();
   render(q ? allTasks.filter(t => t.text.toLowerCase().includes(q)) : allTasks);
+});
+
+// ---------- Team tab ----------
+async function loadTeamView(){
+  const res = await apiFetch("/team/me");
+  const data = await res.json();
+
+  if(data.status === "none"){
+    teamView.innerHTML = `
+      <div class="team-card">
+        <h3>Start a team</h3>
+        <div class="desc">Create a team to assign tasks to teammates and track everyone's progress. You'll become the manager.</div>
+        <div class="inline-form">
+          <input type="text" id="teamNameInput" placeholder="Team name">
+          <button id="createTeamBtn">Create</button>
+        </div>
+        <div id="teamCreateMsg"></div>
+      </div>
+      <div class="team-card">
+        <h3>Joining someone else's team?</h3>
+        <div class="desc">Just share your username with them — <b>${escapeHtml(myUsername)}</b> — and ask them to add you from their Team tab.</div>
+      </div>
+    `;
+    document.getElementById("createTeamBtn").addEventListener("click", async () => {
+      const name = document.getElementById("teamNameInput").value.trim();
+      const msg = document.getElementById("teamCreateMsg");
+      if(!name){ msg.innerHTML = '<div class="team-error">Enter a team name.</div>'; return; }
+      const res2 = await apiFetch("/team/create", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({name})});
+      const data2 = await res2.json();
+      if(!res2.ok){ msg.innerHTML = `<div class="team-error">${escapeHtml(data2.detail)}</div>`; return; }
+      loadTeamView();
+    });
+    return;
+  }
+
+  if(data.status === "member"){
+    teamView.innerHTML = `
+      <div class="you-badge">Team member</div>
+      <div class="team-card">
+        <h3>${escapeHtml(data.team.name)}</h3>
+        <div class="desc">Managed by <b>${escapeHtml(data.team.manager_username)}</b>. Tasks they assign you show up in "My Tasks", tagged "Assigned".</div>
+      </div>
+    `;
+    return;
+  }
+
+  const membersHtml = data.members.length
+    ? data.members.map(m => `
+        <div class="emp-card" data-member-id="${m.id}" data-member-name="${escapeHtml(m.username)}">
+          <div class="row1">
+            <div class="emp-name"><div class="avatar" style="width:34px;height:34px;font-size:13px;">${m.username.charAt(0)}</div>${escapeHtml(m.username)}</div>
+            <div class="emp-pending" data-pending></div>
+          </div>
+          <div class="emp-stats">
+            <div class="emp-stat"><div class="label">This week</div><div class="value" data-week>—</div></div>
+            <div class="emp-stat"><div class="label">This month</div><div class="value" data-month>—</div></div>
+            <div class="emp-stat"><div class="label">Total done</div><div class="value" data-total>—</div></div>
+          </div>
+          <button class="assign-to-btn" data-assign="${m.id}">Assign a task to ${escapeHtml(m.username)}</button>
+        </div>
+      `).join("")
+    : `<div class="empty-state"><div class="big">👥</div>No teammates yet. Add someone by their username below.</div>`;
+
+  teamView.innerHTML = `
+    <div class="you-badge">Manager · ${escapeHtml(data.team.name)}</div>
+    <div class="team-card">
+      <h3>Add a teammate</h3>
+      <div class="desc">Enter the exact username they signed up with.</div>
+      <div class="inline-form">
+        <input type="text" id="memberUsernameInput" placeholder="Their username">
+        <button id="addMemberBtn">Add</button>
+      </div>
+      <div id="addMemberMsg"></div>
+    </div>
+    <div class="section-head"><h3>Team Progress</h3></div>
+    ${membersHtml}
+  `;
+
+  document.getElementById("addMemberBtn").addEventListener("click", async () => {
+    const username = document.getElementById("memberUsernameInput").value.trim();
+    const msg = document.getElementById("addMemberMsg");
+    if(!username){ msg.innerHTML = '<div class="team-error">Enter a username.</div>'; return; }
+    const res2 = await apiFetch("/team/add-member", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({username})});
+    const data2 = await res2.json();
+    if(!res2.ok){ msg.innerHTML = `<div class="team-error">${escapeHtml(data2.detail)}</div>`; return; }
+    msg.innerHTML = `<div class="team-success">${escapeHtml(username)} added!</div>`;
+    loadTeamView();
+  });
+
+  document.querySelectorAll(".assign-to-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      assignToId = parseInt(btn.dataset.assign, 10);
+      const name = btn.closest(".emp-card").dataset.memberName;
+      openTaskPage("create", null, `Assign task to ${name}`);
+    });
+  });
+
+  const res3 = await apiFetch("/team/progress");
+  const stats = await res3.json();
+  stats.forEach(s => {
+    const card = teamView.querySelector(`.emp-card[data-member-id="${s.id}"]`);
+    if(!card) return;
+    card.querySelector("[data-pending]").textContent = `${s.pending} pending`;
+    card.querySelector("[data-week]").textContent = s.completed_this_week;
+    card.querySelector("[data-month]").textContent = s.completed_this_month;
+    card.querySelector("[data-total]").textContent = `${s.completed_total}/${s.total}`;
+  });
+}
+
+// ---------- Full-screen task page ----------
+document.querySelectorAll(".priority-opt").forEach(opt => {
+  opt.addEventListener("click", () => {
+    document.querySelectorAll(".priority-opt").forEach(o => o.classList.remove("active"));
+    opt.classList.add("active");
+    currentPriority = opt.dataset.priority;
+  });
+});
+
+function openTaskPage(pageMode, task, customTitle){
+  tpError.textContent = "";
+  tpWeekStart = startOfWeek(selectedDate);
+  tpSelectedDate = new Date(selectedDate);
+
+  if(pageMode === "create"){
+    editingTaskId = null;
+    tpTitle.textContent = customTitle || "Create new task";
+    tpName.value = ""; tpDesc.value = ""; tpStart.value = ""; tpEnd.value = "";
+    tpAlert.checked = false;
+    document.querySelectorAll(".priority-opt").forEach(o => o.classList.remove("active"));
+    document.querySelector('.priority-opt[data-priority="Medium"]').classList.add("active");
+    currentPriority = "Medium";
+    tpSaveBtn.textContent = assignToId ? "Assign Task" : "Create Task";
+    tpDeleteBtn.classList.add("hidden");
+  } else {
+    editingTaskId = task.id;
+    tpTitle.textContent = task.text;
+    tpName.value = task.text;
+    tpDesc.value = task.description || "";
+    tpStart.value = task.start_datetime ? task.start_datetime.slice(11,16) : "";
+    tpEnd.value = task.end_datetime ? task.end_datetime.slice(11,16) : "";
+    tpAlert.checked = !!task.alert;
+    if(task.start_datetime){ tpSelectedDate = new Date(task.start_datetime); tpWeekStart = startOfWeek(tpSelectedDate); }
+    document.querySelectorAll(".priority-opt").forEach(o => o.classList.remove("active"));
+    document.querySelector(`.priority-opt[data-priority="${task.priority}"]`).classList.add("active");
+    currentPriority = task.priority;
+    tpSaveBtn.textContent = "Edit Task";
+    tpDeleteBtn.classList.remove("hidden");
+  }
+
+  renderWeekStrip(tpWeekDays, tpWeekLabel, tpWeekStart, tpSelectedDate, selectTpDay);
+  taskPage.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeTaskPage(){
+  taskPage.classList.remove("open");
+  document.body.style.overflow = "";
+  assignToId = null;
+}
+
+openCreateBtn.addEventListener("click", () => openTaskPage("create"));
+tpBackBtn.addEventListener("click", closeTaskPage);
+
+tpSaveBtn.addEventListener("click", async () => {
+  const text = tpName.value.trim();
+  if(!text){ tpError.textContent = "Please enter a task name."; return; }
+
+  const dateStr = isoDate(tpSelectedDate);
+  const body = {
+    text,
+    description: tpDesc.value.trim(),
+    priority: currentPriority,
+    start_datetime: tpStart.value ? `${dateStr}T${tpStart.value}` : null,
+    end_datetime: tpEnd.value ? `${dateStr}T${tpEnd.value}` : null,
+    alert: tpAlert.checked,
+  };
+
+  try{
+    if(editingTaskId){
+      await apiFetch(`/tasks/${editingTaskId}`, {method:"PATCH", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+    } else {
+      if(assignToId) body.assigned_to = assignToId;
+      await apiFetch("/tasks", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+    }
+  } catch(err){ tpError.textContent = "Something went wrong. Please try again."; return; }
+
+  const wasAssigning = !!assignToId;
+  closeTaskPage();
+  if(wasAssigning) loadTeamView(); else fetchTasks();
+});
+
+tpDeleteBtn.addEventListener("click", async () => {
+  if(!editingTaskId) return;
+  if(!confirm("Delete this task?")) return;
+  await apiFetch(`/tasks/${editingTaskId}`, {method:"DELETE"});
+  closeTaskPage();
+  fetchTasks();
 });
 </script>
 
